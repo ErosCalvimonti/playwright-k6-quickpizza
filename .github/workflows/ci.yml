@@ -7,13 +7,14 @@ on:
   workflow_dispatch:
 
 # Every job tests its own QuickPizza container, never the shared public demo.
+# Runners are pinned: ubuntu-latest moved to 26.04, which Playwright doesn't support yet.
 env:
   BASE_URL: http://localhost:3333
 
 jobs:
   playwright:
     name: Playwright (API + UI)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       quickpizza:
         image: ghcr.io/grafana/quickpizza-local:latest
@@ -51,7 +52,7 @@ jobs:
 
   k6:
     name: k6 (smoke + load)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: playwright
     services:
       quickpizza:
