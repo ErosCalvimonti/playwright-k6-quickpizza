@@ -1,0 +1,21 @@
+{
+  "name": "playwright-k6-quickpizza",
+  "version": "1.0.0",
+  "description": "UI, API and performance test suite for QuickPizza with Playwright + TypeScript and k6",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test --project=api",
+    "test:ui": "playwright test --project=chromium --project=firefox",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "k6:smoke": "node -e \"require('fs').mkdirSync('k6/results',{recursive:true})\" && k6 run k6/scenarios/smoke.ts",
+    "k6:load": "node -e \"require('fs').mkdirSync('k6/results',{recursive:true})\" && k6 run k6/scenarios/load.ts"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3"
+  }
+}
