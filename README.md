@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/ErosCalvimonti/playwright-k6-quickpizza/actions/workflows/ci.yml/badge.svg)](https://github.com/ErosCalvimonti/playwright-k6-quickpizza/actions/workflows/ci.yml)
 
+![QuickPizza test suite: 24 tests passing, 3 real bugs found](docs/cover.png)
+
 End-to-end quality suite for [QuickPizza](https://github.com/grafana/quickpizza), the demo app Grafana publishes for testing practice. It covers three layers:
 
 | Layer | Tool | What it checks |
